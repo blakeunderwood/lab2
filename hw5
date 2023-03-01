@@ -1,0 +1,68 @@
+---
+title: "ds_hw5"
+output: html_document
+date: "2023-03-01"
+---
+
+```{r}
+
+choco <- read.csv("https://ds202-at-isu.github.io/labs/data/choco.csv")
+head(choco)
+
+```
+
+```{r}
+# part 1
+
+# number of choco bars in dataset
+num_reports = nrow(choco)
+
+num_reports
+
+# bar chart
+bar_chart = ggplot(data=choco, aes(x=Review.Date, y=num_reports)) +
+  geom_bar(stat="identity", width=.75, fill="steelblue")+theme_minimal()
+bar_chart
+
+```
+
+
+```{r}
+# part 2
+
+# histogram
+mpg_hist = ggplot(choco, aes(x=Rating)) + geom_histogram()
+
+mpg_hist = ggplot(choco, aes(x=Rating)) + 
+  geom_histogram(binwidth=1)
+
+mpg_hist
+
+```
+
+Ratings has a mean and median at 3, with a slightly skewed left distribution but an arguement can also be made for a the distribution being symmetric. 
+
+Their is an outlier at a rating of 5. 
+
+```{r}
+
+# scatterplot of cocoa percentage and rating
+mpg_scatter = ggplot(choco, aes(x = Cocoa.Pct, y = Rating)) +
+    geom_point()
+mpg_scatter + geom_jitter()
+
+
+```
+
+Their is no correlation between cocoa percentage and the rating of the chocolate bars.
+
+
+```{r}
+# scatterplot showing how ratings compare across different company locations?
+
+
+
+
+
+filter(choco, Company.Location %in% c("U.S.A.", "France", "Canada"))
+```
