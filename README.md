@@ -2,9 +2,8 @@
 hw5
 
 
+workflow:
 
-things we still need to do:
-
-1. complete last boxplot.
-2. one paragraph commenting on the workflow.
-3. the questions you want to investigate with their answers and conclusions.
+step 1: complete our own individual questions for the assignment. 
+step 2: pick one others persons questions and review it for correctness.
+step 3: high five each other and submit the assignemt in canvas. 
