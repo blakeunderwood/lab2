@@ -13,19 +13,18 @@ head(choco)
 
 ```{r}
 # part 1
-
 # number of choco bars in dataset
 num_reports = nrow(choco)
-
 num_reports
+
+Q.1: 1852 choclate bars
 
 # bar chart
 bar_chart = ggplot(data=choco, aes(x=Review.Date, y=num_reports)) +
   geom_bar(stat="identity", width=.75, fill="steelblue")+theme_minimal()
 bar_chart
-
 ```
-
+Q.2: In general as the year increases the number of ratings also increases. Meaning year and rating have a positive correlation.
 
 ```{r}
 # part 2
@@ -39,10 +38,9 @@ mpg_hist = ggplot(choco, aes(x=Rating)) +
 mpg_hist
 
 ```
-
-Ratings has a mean and median at 3, with a slightly skewed left distribution but an arguement can also be made for a the distribution being symmetric. 
-
-Their is an outlier at a rating of 5. 
+Q.1:
+Ratings has a mean and median at 3, with a slightly skewed left distribution but an arguement can also be made for
+a the distribution being symmetric. Their is an outlier at a rating of 5. 
 
 ```{r}
 
@@ -53,7 +51,7 @@ mpg_scatter + geom_jitter()
 
 
 ```
-
+Q.2:
 Their is no correlation between cocoa percentage and the rating of the chocolate bars.
 
 
@@ -71,7 +69,7 @@ ggplot(var, aes(x = Rating, y = Company.Location )) +
   theme_classic()
 
 ```
-
+Q.3: 
 Across the the top 3 countries with most ratings, they all have around the same median rating at around 3.2.
 
 Canada and US are both skewed left and have larger varaiances than France which is symmetric and has a much smaller variance.
