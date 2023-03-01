@@ -58,11 +58,22 @@ Their is no correlation between cocoa percentage and the rating of the chocolate
 
 
 ```{r}
-# scatterplot showing how ratings compare across different company locations?
+# varaible making new dataset for top 3 countries with most ratings
+var = dplyr::filter(choco, Company.Location %in% c("U.S.A.", "France", "Canada"))
+# boxplots
+ggplot(var, aes(x = Rating, y = Company.Location )) +
+  geom_boxplot()+
+  labs(
+    title = "Chocolate rating for 3 countries",
+    x = "Rating",
+    y = "Country"
+  ) +
+  theme_classic()
 
-
-
-
-
-filter(choco, Company.Location %in% c("U.S.A.", "France", "Canada"))
 ```
+
+Across the the top 3 countries with most ratings, they all have around the same median rating at around 3.2.
+
+Canada and US are both skewed left and have larger varaiances than France which is symmetric and has a much smaller variance.
+
+the US has two outliers, France has one outlier and Canada has no outliers. 
